@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Store | Tienda de Celulares Online</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#0f172a;
+    --secondary:#2563eb;
+    --success:#22c55e;
+    --light:#f8fafc;
+    --dark:#1e293b;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#333;
+}
+
+header{
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:800;
+    color:var(--primary);
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--primary);
+    font-weight:600;
+}
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.85)),
+    url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1600');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    color:white;
+    max-width:700px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero-content span{
+    color:#60a5fa;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:15px 30px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--secondary);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#1d4ed8;
+}
+
+.btn-success{
+    background:var(--success);
+    color:white;
+}
+
+.section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+    color:var(--primary);
+}
+
+.section-title span{
+    color:var(--secondary);
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.category{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.category img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.category h3{
+    padding:20px;
+}
+
+.products{
+    background:var(--light);
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.product{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.product img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.product-content{
+    padding:20px;
+}
+
+.price{
+    color:var(--success);
+    font-size:28px;
+    font-weight:700;
+    margin:15px 0;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.feature{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.admin{
+    background:var(--primary);
+    color:white;
+}
+
+.admin-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.admin-card{
+    background:rgba(255,255,255,.08);
+    padding:25px;
+    border-radius:12px;
+}
+
+footer{
+    background:#020617;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:2.5rem;
+}
+
+nav{
+    display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container navbar">
+
+<div class="logo">
+📱 Mobile<span>Store</span>
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Inicio</a></li>
+<li><a href="#">Celulares</a></li>
+<li><a href="#">Accesorios</a></li>
+<li><a href="#">Ofertas</a></li>
+<li><a href="#">Contacto</a></li>
+</ul>
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<h1>
+SISTEMA WEB PARA
+<span>TIENDAS DE CELULARES</span>
+CON VENTAS ONLINE
+</h1>
+
+<p>
+Vende celulares, tablets, accesorios y tecnología desde una plataforma moderna con carrito de compras, pagos online y panel administrativo.
+</p>
+
+<button class="btn btn-primary">
+Ver Productos
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Categorías <span>Principales</span>
+</h2>
+
+<div class="categories">
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800">
+<h3>Smartphones</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=800">
+<h3>Tablets</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800">
+<h3>Accesorios</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1545127398-14699f92334b?w=800">
+<h3>Smartwatch</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section products">
+
+<div class="container">
+
+<h2 class="section-title">
+Productos <span>Destacados</span>
+</h2>
+
+<div class="product-grid">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
+<div class="product-content">
+<h3>iPhone 16 Pro</h3>
+<p>Potencia, diseño y rendimiento.</p>
+<div class="price">$4.999.900</div>
+<button class="btn btn-success">Comprar</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=800">
+<div class="product-content">
+<h3>Samsung Galaxy S25</h3>
+<p>Experiencia premium Android.</p>
+<div class="price">$4.299.900</div>
+<button class="btn btn-success">Comprar</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=800">
+<div class="product-content">
+<h3>iPad Air</h3>
+<p>Ideal para trabajo y estudio.</p>
+<div class="price">$2.899.900</div>
+<button class="btn btn-success">Comprar</button>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Beneficios del <span>Sistema</span>
+</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>🛒 Carrito de Compras</h3>
+<p>Proceso de compra rápido y seguro.</p>
+</div>
+
+<div class="feature">
+<h3>💳 Pagos Online</h3>
+<p>Integración con pasarelas de pago.</p>
+</div>
+
+<div class="feature">
+<h3>📦 Control de Inventario</h3>
+<p>Gestión automática de stock.</p>
+</div>
+
+<div class="feature">
+<h3>📱 Diseño Responsive</h3>
+<p>Compatible con móviles y tablets.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section admin">
+
+<div class="container">
+
+<h2 class="section-title" style="color:white;">
+Panel <span style="color:#60a5fa;">Administrativo</span>
+</h2>
+
+<div class="admin-grid">
+
+<div class="admin-card">
+<h3>📊 Dashboard</h3>
+<p>Ventas, pedidos e ingresos.</p>
+</div>
+
+<div class="admin-card">
+<h3>📦 Productos</h3>
+<p>Agregar, editar y eliminar productos.</p>
+</div>
+
+<div class="admin-card">
+<h3>👥 Clientes</h3>
+<p>Administración de usuarios.</p>
+</div>
+
+<div class="admin-card">
+<h3>📈 Reportes</h3>
+<p>Estadísticas de ventas y crecimiento.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 MobileStore - Sistema Web para Tiendas de Celulares con Ventas Online
+</footer>
+
+<script>
+
+document.querySelectorAll('.btn').forEach(btn=>{
+
+btn.addEventListener('click',()=>{
+
+alert('Gracias por tu interés. Esta función puede conectarse con carrito de compras, WhatsApp o pasarela de pagos.');
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
